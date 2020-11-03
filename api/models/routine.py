@@ -1,17 +1,17 @@
 from sqlalchemy import Column, ForeignKey, Integer
 from sqlalchemy.dialects.mysql import CHAR, BOOLEAN, TEXT, DECIMAL
-
+from sqlalchemy.orm import relationship
+from api.models.routine_amount_relation import RoutineAmountRelation
 from libs.database.types import Base
 
 
 class Routine(Base):
     __tablename__ = 'routines'
-    from_user_id = Column(Integer, ForeignKey('users.id', ondelete='SET NULL'), index=True)
-    to_user_id = Column(Integer, ForeignKey('users.id', ondelete='SET NULL'), index=True)
-    rate = Column(DECIMAL(10, 3))
+    name = Column(TEXT)
+    amounts = relationship('Amount', secondary=RoutineAmountRelation.__table__)
 
     def json(self):
         return {
             'id': self.id,
-            'rate': self.rate
+            'name': self.name,
         }

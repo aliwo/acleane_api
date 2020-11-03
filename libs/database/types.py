@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, Integer, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import types
 
@@ -8,9 +8,13 @@ from sqlalchemy import types
 class Base:
     '''
     https://docs.sqlalchemy.org/en/latest/orm/extensions/declarative/mixins.html
+
+    TODO: default 에 lambda 를 넣었을 때 실제로 동작하는지 확인해 보기
+    https://stackoverflow.com/questions/23332393/default-value-with-primary-key-sqlalchemy
+    https://docs.sqlalchemy.org/en/14/core/defaults.html#context-sensitive-default-functions
     '''
     id = Column(Integer, primary_key=True, autoincrement=True)
-
+    created_at = Column(DateTime, default=lambda: datetime.now())
 
     def json(self, **kwargs):
         return {}
@@ -18,7 +22,7 @@ class Base:
 Base = declarative_base(cls=Base)
 
 
-class LaboratoryTypes:
+class AcleaneTypes:
 
 
     class TextTuple(types.TypeDecorator):

@@ -13,6 +13,10 @@ paths:
   /:
     $ref: 'rest/health.yaml#/hi'
 
+  # Image
+  /image:
+    $ref: 'rest/picture.yaml#/picture'
+
   # Oauth
 #  /oauth/google:
 #    $ref: 'rest/oauth.yaml#/google'

@@ -15,9 +15,11 @@ fileConfig(config.config_file_name)
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
-target_metadata = None
+import sys
+sys.path.append('.')
+from libs.database.types import Base
+from api.models import * # TODO 왜 와일드 카드 쓰면 안되지? 되도록 만들어 보자. https://julienharbulot.com/python-dynamical-import.html
+target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
@@ -64,7 +66,7 @@ def run_migrations_online():
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, target_metadata=target_metadata
+            connection=connection, target_metadata=target_metadata, user_module_prefix='AcleaneTypes.'
         )
 
         with context.begin_transaction():
