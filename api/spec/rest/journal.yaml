@@ -1,0 +1,13 @@
+# journal 은 시작일, user_id, user_routine_id 를 갖고 db 에 생성
+# 종료일이 작성되면 그 journal 은 끝
+# 추후에 같은 routine_id 를 가진 journal 을 생성할 것
+
+
+# ## Journal 생성 절차
+# Lock 을 걸어야 함. (이게 테이블을 다 걸어야 되?)
+# 1. 같은 routine_id 와 user_id 를 갖고 종료일이 지정되지 않은 journal 을 검색한다.
+# 2. 있다면 새 journal 을 만들지 않는다.
+# 3. 없다면 생성하고 commit
+
+
+# skip 과 연관 있다.
