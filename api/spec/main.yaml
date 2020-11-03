@@ -13,134 +13,16 @@ paths:
   /:
     $ref: 'rest/health.yaml#/hi'
 
-  /test/match:
-    $ref: 'rest/test.yaml#/test'
-
   # Oauth
-  /oauth/google:
-    $ref: 'rest/oauth.yaml#/google'
-  /oauth/naver:
-    $ref: 'rest/oauth.yaml#/naver'
-  /oauth/kakao:
-    $ref: 'rest/oauth.yaml#/kakao'
-#  /oauth/apple:
-#    $ref: 'rest/oauth.yaml#/apple'
+#  /oauth/google:
+#    $ref: 'rest/oauth.yaml#/google'
 
   # Users
-  /users/{user_id}:
-    $ref: 'rest/user.yaml#/profile'
-  /users/me:
-    $ref: 'rest/user.yaml#/me'
-  /users/nickname/{nick_name}:
-    $ref: 'rest/user.yaml#/nickname'
-  /users/occupation:
-    $ref: 'rest/user.yaml#/occupation'
-  /users/random:
-    $ref: 'rest/user.yaml#/random'
-  /users/phone:
-    $ref: 'rest/user.yaml#/phone'
+#  /users/{user_id}:
+#    $ref: 'rest/user.yaml#/profile'
+#  /users/me:
+#    $ref: 'rest/user.yaml#/me'
 
-  # Coupon
-  /coupons/{code}:
-    $ref: 'rest/coupon.yaml#/coupon'
-
-  # Heart
-  /heart:
-    $ref: 'rest/heart.yaml#/heart'
-  /heart/double:
-    $ref: 'rest/heart.yaml#/double_heart'
-  /heart/recharge/google:
-    $ref: 'rest/heart.yaml#/google_recharge'
-  /heart/2me:
-    $ref: 'rest/heart.yaml#/heart2me'
-  /heart/accept:
-    $ref: 'rest/heart.yaml#/accept'
-
-  # Star
-  /star:
-    $ref: 'rest/star.yaml#/star'
-  /star/user/{user_id}:
-    $ref: 'rest/star.yaml#/star_user'
-
-  # Point
-  /point/stay:
-    $ref: 'rest/point.yaml#/stay'
-
-  # Report
-  /report:
-    $ref: 'rest/report.yaml#/report'
-
-  # Sms
-  /sms:
-    $ref: 'rest/sms.yaml#/sms'
-  /sms/auth:
-    $ref: 'rest/sms.yaml#/sms_auth'
-  /sms/auth/dry:
-    $ref: 'rest/sms.yaml#/sms_auth_dry'
-
-  # Animals
-  /animals/{animal_id}:
-    $ref: 'rest/animal.yaml#/animal'
-
-  # indicator
-  /indicator/{synonym}:
-    $ref: 'rest/animal.yaml#/mbti_indicator'
-
-  # Questions
-  /questions/mbti:
-    $ref: 'rest/question.yaml#/mbti'
-  /results/mbti/{user_id}:
-    $ref: 'rest/answer.yaml#/mbti'
-#  /questions/love:
-#    $ref: 'rest/question.yaml#/mbti'
-
-  # Matches
-  /matches/{match_id}:
-    $ref: 'rest/match.yaml#/match'
-  /matches/soyeon:
-    $ref: 'rest/match.yaml#/soyeon'
-  /matches/prefer:
-    $ref: 'rest/match.yaml#/prefer'
-  /matches/old:
-    $ref: 'rest/match.yaml#/old'
-  /matches/random:
-    $ref: 'rest/match.yaml#/random'
-  /matches/signup:
-    $ref: 'rest/match.yaml#/signup'
-  /matches/matched:
-    $ref: 'rest/match.yaml#/matched'
-  /matches/hearted:
-    $ref: 'rest/match.yaml#/hearted'
-  /matches/highrated:
-    $ref: 'rest/match.yaml#/high_rate'
-  /matches/open:
-    $ref: 'rest/match.yaml#/open'
-
-  # Term
-  /terms:
-    $ref: 'rest/term.yaml#/term'
-  /terms/privacy:
-    $ref: 'rest/term.yaml#/privacy'
-
-  # Image
-  /image:
-    $ref: 'rest/image.yaml#/image'
-
-  # Type Group
-  /type_groups/{type_group_id}:
-    $ref: 'rest/type_group.yaml#/type_group'
-  /type_groups:
-    $ref: 'rest/type_group.yaml#/type_groups'
-
-  # Type Group
-  /life_style/questions:
-    $ref: 'rest/life_style.yaml#/question'
-  /life_style/answers:
-    $ref: 'rest/life_style.yaml#/answer'
-
-  # Magazines
-#  /magazines:
-#    $ref: 'rest/magazine.yaml#/magazines'
 
 components:
   securitySchemes:
@@ -148,28 +30,5 @@ components:
       type: http
       scheme: bearer
       x-bearerInfoFunc: libs.route.login_required.login_required
-  schemas:
-    animal:
-      $ref: 'models/animal.yaml#/animal'
-    user:
-      $ref: 'models/user.yaml#/user'
-    user_point:
-      $ref: 'models/user_point.yaml#/user_point'
-    term:
-      $ref: 'models/term.yaml#/term'
-    terms_agreement:
-      $ref: 'models/terms_agreement.yaml#/terms_agreement'
-    sms:
-      $ref: 'models/sms_auth.yaml#/sms_auth'
-    mbti_question:
-      $ref: 'models/mbti_question.yaml#/mbti_question'
-    mbti_result:
-      $ref: 'models/mbti_result.yaml#/mbti_result'
-    indicator:
-      $ref: 'models/indicator.yaml#/mbti_indicator'
-    heart:
-      $ref: 'models/heart.yaml#/heart'
-    type_group:
-      $ref: 'models/type_group.yaml#/type_group'
-    match:
-      $ref: 'models/match.yaml#/match'
+#  schemas:
+

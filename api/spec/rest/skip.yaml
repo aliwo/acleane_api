@@ -1,2 +1,7 @@
 # journal 의 "하루 휴식"을 나타냄.
 # 날짜, user_id, journal_id 로 구성됨
+
+
+skip:
+  post
+

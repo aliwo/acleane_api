@@ -1,3 +1,65 @@
 
 
-# userRoutine -> routine_id 와 용량 id 를 갖고 시작한다.
+# userRoutine -> 시작일, routine_id, amount_id, user_id 를 갖고 시작한다.
+
+
+# ## userRoutine 생성 절차
+# Lock 을 걸어야 함. (특정 user 에 lock 을 걸어야 겠네. 조회도 안되는 lock 을)
+# 1. 같은 routine_id 와 user_id 를 갖고 종료일이 지정되지 않은 userRoutine 을 검색한다.
+# 2. 있다면 새 userRoutine 을 만들지 않는다.
+# 3. 없다면 생성하고 commit
+
+
+routine:
+  get:
+    description: 곰보일기의 모든 routine 을 가져옵니다.
+    operationId: api.rest.routine.get_all_routines
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                questions:
+                  type: array
+
+
+user_routine:
+  post:
+    description: |
+    user routine 을 생성하는 batch api. success 에는
+    user_routine데 을 만드는데 성공한 routine_id 들이 들어갑니다.
+    failure 에는 실패한 id 들이 들어갑니다.
+    operationId: api.rest.routine.post_user_routines
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              routine_ids:
+                type: array
+                example:
+                  - 1
+                  - 2
+                  - 3
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                success:
+                  type: array
+                  example:
+                    - 1
+                    - 2
+                failure:
+                  type: array
+                  example:
+                    - 3
