@@ -7,7 +7,6 @@ from pathlib import Path
 import os
 
 from libs.database.engine import set_session_destroyer
-from migration import migrate # 지우지마
 
 
 if os.environ.get('AC_STAGE', '') == 'PRODUCTION':
