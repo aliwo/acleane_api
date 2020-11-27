@@ -18,8 +18,8 @@ paths:
     $ref: 'rest/picture.yaml#/picture'
 
   # Oauth
-#  /oauth/google:
-#    $ref: 'rest/oauth.yaml#/google'
+  /oauth/google:
+    $ref: 'rest/oauth.yaml#/google'
 
   # Users
 #  /users/{user_id}:
