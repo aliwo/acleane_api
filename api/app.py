@@ -10,7 +10,7 @@ from libs.database.engine import set_session_destroyer
 from migration import migrate # 지우지마
 
 
-if os.environ.get('SY_STAGE', '') == 'PRODUCTION':
+if os.environ.get('AC_STAGE', '') == 'PRODUCTION':
     import sentry_sdk # 로컬에서 sentry 깔기가 귀찮아서 ㅎㅎ
     sentry_sdk.init("https://ff3db8501cc749f194820a7f4719d689@o390454.ingest.sentry.io/5233605")
 

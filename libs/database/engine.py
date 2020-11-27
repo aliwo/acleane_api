@@ -3,10 +3,7 @@ from flask import g
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-# 어짜피 database 주소는 도커 파일에서 넣을 수가 없다... 다른 컨테이너에서 돌기 때문.
-# conn_args = { 'ssl_args': os.environ.get('SY_SSL_CA_PATH') } if os.environ.get('SY_STAGE') == 'PRODUCTION' else {}
-
-engine = create_engine(os.environ.get('SY_DATABASE_URI'), pool_recycle=300)
+engine = create_engine(os.environ.get('AC_DATABASE_URI'), pool_recycle=300)
 SessionMaker = sessionmaker(bind=engine)
 
 
