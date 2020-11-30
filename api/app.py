@@ -11,7 +11,12 @@ from libs.database.engine import set_session_destroyer
 
 if os.environ.get('AC_STAGE', '') == 'PRODUCTION':
     import sentry_sdk # 로컬에서 sentry 깔기가 귀찮아서 ㅎㅎ
-    sentry_sdk.init("https://ff3db8501cc749f194820a7f4719d689@o390454.ingest.sentry.io/5233605")
+    from sentry_sdk.integrations.flask import FlaskIntegration
+    sentry_sdk.init(
+        dsn="https://6981758602ae4a959164cb6cfb7114fe@o390454.ingest.sentry.io/5537977",
+        integrations=[FlaskIntegration()],
+        traces_sample_rate=1.0
+    )
 
 
 app = connexion.App(__name__, specification_dir='api/spec/', options={'swagger_path': swagger_ui_3_path})
