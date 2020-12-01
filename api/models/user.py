@@ -15,3 +15,12 @@ class User(Base):
     name = Column(TEXT)
     gender = Column(CHAR(10))
     age = Column(Integer)
+
+    def json(self, **kwargs):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'name': self.name,
+            'gender': self.gender,
+            'age': self.age,
+        }
