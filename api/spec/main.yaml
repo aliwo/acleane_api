@@ -24,8 +24,8 @@ paths:
   # Users
 #  /users/{user_id}:
 #    $ref: 'rest/user.yaml#/profile'
-#  /users/me:
-#    $ref: 'rest/user.yaml#/me'
+  /users/me:
+    $ref: 'rest/user.yaml#/me'
 
 
 components:

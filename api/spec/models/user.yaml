@@ -1,0 +1,15 @@
+user:
+  description: end users
+  properties:
+    age:
+      type: integer
+    created_at:
+      type: string
+    email:
+      type: string
+    gender:
+      type: string
+    id:
+      type: integer
+    name:
+      type: string
