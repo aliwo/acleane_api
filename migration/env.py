@@ -18,7 +18,19 @@ fileConfig(config.config_file_name)
 import sys
 sys.path.append('.')
 from libs.database.types import Base
-from api.models import * # TODO 왜 와일드 카드 쓰면 안되지? 되도록 만들어 보자. https://julienharbulot.com/python-dynamical-import.html
+from api.models.oauth.google import OauthGoogle
+from api.models.amount import Amount
+from api.models.picture import Picture
+from api.models.routine import Routine
+from api.models.routine_amount_relation import RoutineAmountRelation
+from api.models.skip import Skip
+from api.models.trouble import Trouble
+from api.models.user import User
+from api.models.user_routine import UserRoutine
+from api.models.user_session import UserSession
+from api.models.user_trouble import UserTrouble
+
+# TODO 왜 와일드 카드 쓰면 안되지? 되도록 만들어 보자. https://julienharbulot.com/python-dynamical-import.html
 target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
