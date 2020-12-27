@@ -14,4 +14,5 @@ class Routine(Base):
         return {
             'id': self.id,
             'name': self.name,
+            'amounts': [amount.name for amount in self.amounts]
         }

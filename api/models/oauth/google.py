@@ -7,15 +7,15 @@ from libs.database.types import Base
 
 
 # google 로 부터 오는 user_info 는 다음과 같이 생겼습니다.
-# {
-#     "id": "105171281182656830722",
-#     "email": "recordable0711@gmail.com",
-#     "verified_email": true,
-#     "name": "recordable542",
-#     "given_name": "recordable542",
-#     "picture": "https://lh3.googleusercontent.com/a-/AAuE7mApmJ04wBc-McXES5PG7pgeC4sKLMtpkq2g27lR2Q",
-#     "locale": "ko"
-# }
+hi = {
+    "id": "105171281182656830722",
+    "email": "recordable0711@gmail.com",
+    "verified_email": True,
+    "name": "recordable542",
+    "given_name": "recordable542",
+    "picture": "https://lh3.googleusercontent.com/a-/AAuE7mApmJ04wBc-McXES5PG7pgeC4sKLMtpkq2g27lR2Q",
+    "locale": "ko"
+}
 
 
 
