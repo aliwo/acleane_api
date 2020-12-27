@@ -1,5 +1,5 @@
 from sqlalchemy import Column, ForeignKey, Integer
-from sqlalchemy.dialects.mysql import TEXT, DATETIME
+from sqlalchemy.dialects.mysql import TEXT, DATE
 
 from libs.database.types import Base
 
@@ -7,7 +7,7 @@ from libs.database.types import Base
 class Picture(Base):
     __tablename__ = 'pictures'
     user_id = Column(Integer, ForeignKey('users.id', ondelete='SET NULL'), index=True)
-    date = Column(DATETIME)
+    date = Column(DATE)
     url = Column(TEXT)
 
     def __init__(self, **kwargs):

@@ -18,7 +18,7 @@ def upload_picture():
     afr(
         Picture(user_id=g.user_session.user.id,
                 url=url,
-                date=datetime.strptime(request.form.get('date'), '%Y-%m-%d')
+                date=datetime.strptime(request.form.get('date'), '%Y-%m-%d').date()
         )
     )
     Session().commit()
