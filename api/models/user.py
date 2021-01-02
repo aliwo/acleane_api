@@ -15,6 +15,7 @@ class User(Base):
     name = Column(TEXT)
     gender = Column(CHAR(10))
     age = Column(Integer)
+    registed = Column(BOOLEAN)
 
     def json(self, **kwargs):
         return {
@@ -23,4 +24,5 @@ class User(Base):
             'name': self.name,
             'gender': self.gender,
             'age': self.age,
+            'registered': self.registed,
         }
