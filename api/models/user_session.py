@@ -17,7 +17,7 @@ class UserSession(Base):
     user_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
     expiry = Column(DATETIME, nullable=False)
     activated = Column(Integer, server_default='1')
-    user = relationship("User", lazy="selectin")
+    user = relationship("User", lazy='selectin')
     admin = Column(BOOLEAN)
 
     def __init__(self, user, **kwargs):
