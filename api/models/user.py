@@ -1,9 +1,7 @@
 from datetime import datetime
 
 from sqlalchemy import Integer, Column, ForeignKey, orm
-from sqlalchemy.dialects.mysql import TEXT, DATETIME, CHAR, INTEGER, BOOLEAN, TIMESTAMP, DECIMAL, JSON
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy.dialects.mysql import TEXT, CHAR
 
 from libs.database.types import Base
 from libs.datetime_helper import DateTimeHelper
@@ -15,7 +13,6 @@ class User(Base):
     name = Column(TEXT)
     gender = Column(CHAR(10))
     age = Column(Integer)
-    registed = Column(BOOLEAN)
 
     def json(self, **kwargs):
         return {
@@ -24,5 +21,4 @@ class User(Base):
             'name': self.name,
             'gender': self.gender,
             'age': self.age,
-            'registered': self.registed,
         }

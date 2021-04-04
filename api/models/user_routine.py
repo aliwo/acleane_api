@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer
+from sqlalchemy import Column, ForeignKey, Integer, UniqueConstraint
 from sqlalchemy.dialects.mysql import TEXT
 from sqlalchemy.orm import relationship
 
@@ -7,6 +7,7 @@ from libs.database.types import Base
 
 class UserRoutine(Base):
     __tablename__ = 'user_routines'
+    __table_args__ = (UniqueConstraint('user_id', 'routine_id', name='user_routine_unique'), )
     user_id = Column(Integer, ForeignKey('users.id', ondelete='SET NULL'), index=True)
     routine_id = Column(Integer, ForeignKey('routines.id', ondelete='SET NULL'), index=True)
     routine = relationship('Routine', lazy='selectin')

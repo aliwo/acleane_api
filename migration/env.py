@@ -18,12 +18,12 @@ fileConfig(config.config_file_name)
 import sys
 sys.path.append('.')
 from libs.database.types import Base
+from api.models.journal import Journal
 from api.models.oauth.google import OauthGoogle
 from api.models.amount import Amount
 from api.models.picture import Picture
 from api.models.routine import Routine
 from api.models.routine_amount_relation import RoutineAmountRelation
-from api.models.skip import Skip
 from api.models.trouble import Trouble
 from api.models.user import User
 from api.models.user_routine import UserRoutine

@@ -20,14 +20,15 @@ routine:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                questions:
-                  type: array
+              type: array
+              example:
+                []
 
 
 user_routine:
   get:
+    security:
+      - Authorization: []
     description: 유저의 모든 userRoutine 을 가져옵니다.
     operationId: api.rest.routine.get_all_user_routines
     responses:
@@ -36,10 +37,9 @@ user_routine:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                questions:
-                  type: array
+              type: array
+              example:
+                []
 
   post:
     security:
