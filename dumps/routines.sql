@@ -1,0 +1,10 @@
+INSERT INTO routines(id, name, created_at) VALUES (1, '로아큐탄', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (2, '독시사이클린', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (3, '미노사이클린', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (4, 'AHA', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (5, 'BHA', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (6, 'PHA', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (7, '벤조일페록사이드', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (8, '디페린', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (9, '비타민 A', NULL);
+INSERT INTO routines(id, name, created_at) VALUES (10, '비타민 D', NULL);

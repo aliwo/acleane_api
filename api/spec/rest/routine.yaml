@@ -27,11 +27,24 @@ routine:
 
 
 user_routine:
+  get:
+    description: 유저의 모든 userRoutine 을 가져옵니다.
+    operationId: api.rest.routine.get_all_user_routines
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                questions:
+                  type: array
+
   post:
-    description: |
-    user routine 을 생성하는 batch api. success 에는
-    user_routine데 을 만드는데 성공한 routine_id 들이 들어갑니다.
-    failure 에는 실패한 id 들이 들어갑니다.
+    security:
+      - Authorization: []
+    description: user routine 을 생성하는 batch api.
     operationId: api.rest.routine.post_user_routines
     requestBody:
       required: true
@@ -46,6 +59,12 @@ user_routine:
                   - 1
                   - 2
                   - 3
+              amounts:
+                type: array
+                example:
+                  - 한 방울
+                  - 두 알
+                  - 한 알
     responses:
       "200":
         description: Success
@@ -54,12 +73,6 @@ user_routine:
             schema:
               type: object
               properties:
-                success:
-                  type: array
-                  example:
-                    - 1
-                    - 2
-                failure:
-                  type: array
-                  example:
-                    - 3
+                okay:
+                  type: boolean
+                  example: true

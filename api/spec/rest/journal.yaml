@@ -1,0 +1,58 @@
+journal:
+  get:
+    security:
+      - Authorization: []
+    description: 특정 달의 모든 journal 을 가져옵니다.
+    operationId: api.rest.journal.get_all_journals_of_month
+    parameters:
+    - in: query
+      name: year
+      schema:
+        type: string
+        example: 2021
+    - in: query
+      name: month
+      schema:
+        type: string
+        example: 4
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                questions:
+                  type: array
+
+  post:
+    security:
+      - Authorization: []
+    description: 하나의 journal 을 생성합니다.
+    operationId: api.rest.journal.create_journal
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              routine_id:
+                type: integer
+                example: 2
+              date:
+                type: string
+                example: 2021-04-02 (YYYY-MM-DD 형식)
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                okay:
+                  type: boolean
+                  example: true
+

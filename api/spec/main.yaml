@@ -27,6 +27,16 @@ paths:
   /users/me:
     $ref: 'rest/user.yaml#/me'
 
+  # Routines
+  /routines:
+    $ref: 'rest/routine.yaml#/routine'
+  /routines/user:
+    $ref: 'rest/routine.yaml#/user_routine'
+
+  # Journals
+  /journals:
+    $ref: 'rest/journal.yaml#/journal'
+
 
 components:
   securitySchemes:

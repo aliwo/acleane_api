@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer
+from sqlalchemy import Column, ForeignKey, Integer, TEXT
 from sqlalchemy.dialects.mysql import DATE
 from sqlalchemy.orm import relationship
 
@@ -10,6 +10,7 @@ class Journal(Base):
     user_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
     routine_id = Column(Integer, ForeignKey('routines.id', ondelete='CASCADE'), nullable=False)
     routine = relationship('Routine', lazy='selectin')
+    name = Column(TEXT) # TODO 생성 당시의 user_routine 의 name 을 물려받아야 합니다.
     date = Column(DATE)
 
     def json(self):
