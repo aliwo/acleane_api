@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 
 import boto3
@@ -6,8 +7,8 @@ from werkzeug.utils import secure_filename
 
 import libs.route.errors
 
-KEY_ID = 'AKIAZ4PPDWSDXN37PFDZ'
-KEY = '+jYoN3ukx2tZ53+qhoNJ1a7VWVCmMHfv2E0eGSWM'
+KEY_ID = os.environ.get('AC_S3_KEY')
+KEY = os.environ.get('AC_S3_SECRET')
 BUCKET = 'soyeonlab'
 BUCKET_URL = 'https://soyeonlab.s3.ap-northeast-2.amazonaws.com/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -46,6 +47,6 @@ def upload_file(file, name):
             name
         )
         return '{}{}'.format(BUCKET_URL, name)
-    except botocore.exceptions.ClientError:
+    except botocore.exceptions.ClientError as e:
         print('something went wrong')
 
