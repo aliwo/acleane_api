@@ -10,7 +10,7 @@ class Journal(Base):
     user_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), nullable=False)
     routine_id = Column(Integer, ForeignKey('routines.id', ondelete='CASCADE'), nullable=False)
     routine = relationship('Routine', lazy='selectin')
-    name = Column(TEXT) # TODO 생성 당시의 user_routine 의 name 을 물려받아야 합니다.
+    name = Column(TEXT)
     date = Column(DATE)
 
     def json(self):
