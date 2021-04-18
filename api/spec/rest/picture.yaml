@@ -22,6 +22,15 @@ picture:
             schema:
               type: object
               properties:
+                id:
+                  type: integer
+                  example: 1
+                user_id:
+                  type: integer
+                  example: 1
+                date:
+                  type: string
+                  example: yyyy-mm-dd
                 url:
                   type: string
                   example: https://storage.googleapis.com/soyeonlab/dog-2020-05-14-201910.png

@@ -12,6 +12,6 @@ from flask import request, g
 def upload_picture():
     file = request.files.get('image')
     url = s3.upload_file(file, file.filename)
-    afr(Picture(user_id=g.user_session.user.id, url=url))
+    picture = afr(Picture(user_id=g.user_session.user.id, url=url))
     Session().commit()
-    return {'url': url}, Status.HTTP_200_OK
+    return picture.json(), Status.HTTP_200_OK

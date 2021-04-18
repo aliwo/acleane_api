@@ -44,6 +44,9 @@ journal:
               date:
                 type: string
                 example: 2021-04-02 (YYYY-MM-DD 형식)
+              picture_id:
+                type: int
+                example: picture 의 id. (있으면 넣습니다.)
     responses:
       "200":
         description: Success
