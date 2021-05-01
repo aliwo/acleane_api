@@ -21,3 +21,9 @@ def put_user_profile():
     g.user_session.user.el_time = datetime.now()
     Session().commit()
     return {'user': g.user_session.user.json()}, Status.HTTP_200_OK
+
+
+@route
+def check_name(name):
+    duplicate = Session().query(User).filter((User.name == name)).one_or_none()
+    return {'available': not duplicate}, Status.HTTP_200_OK

@@ -28,6 +28,8 @@ paths:
 #    $ref: 'rest/user.yaml#/profile'
   /users/me:
     $ref: 'rest/user.yaml#/me'
+  /users/name/{name}:
+    $ref: 'rest/user.yaml#/name'
 
   # Routines
   /routines:

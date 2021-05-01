@@ -43,6 +43,29 @@ me:
                 user:
                   $ref: '../models/user.yaml#/user'
 
+name:
+  get:
+    description: 닉네임 중복을 체크합니다.
+    operationId: api.rest.user.check_name
+    parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                duplicate:
+                  type: boolean
+                  example: false
+
 #  delete:
 #    security:
 #      - Authorization: []
