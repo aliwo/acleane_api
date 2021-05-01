@@ -16,6 +16,8 @@ paths:
   # Image
   /image:
     $ref: 'rest/picture.yaml#/picture'
+  /image/{picture_id}:
+    $ref: 'rest/picture.yaml#/picture_by_id'
 
   # Oauth
   /oauth/google:

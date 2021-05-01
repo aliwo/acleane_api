@@ -35,3 +35,39 @@ picture:
                   type: string
                   example: https://storage.googleapis.com/soyeonlab/dog-2020-05-14-201910.png
 
+picture_by_id:
+  get:
+    security:
+      - Authorization: []
+    description: id 로 사진을 조회합니다.
+    operationId: api.rest.picture.get_picture_by_id
+    parameters:
+      - in: path
+        name: picture_id
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 1
+                user_id:
+                  type: integer
+                  example: 1
+                date:
+                  type: string
+                  example: yyyy-mm-dd
+                url:
+                  type: string
+                  example: https://storage.googleapis.com/soyeonlab/dog-2020-05-14-201910.png
+
+
