@@ -44,5 +44,6 @@ components:
       type: http
       scheme: bearer
       x-bearerInfoFunc: libs.route.login_required.login_required
-#  schemas:
-
+  schemas:
+    user:
+      $ref: 'models/user.yaml#/user'

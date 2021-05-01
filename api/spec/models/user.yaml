@@ -9,7 +9,11 @@ user:
       type: string
     gender:
       type: string
+      description: \"남자\", \"여자\" 중 하나로 넣으면 됩니당
     id:
       type: integer
     name:
+      type: string
+    troubles:
+      description: 문자열의 리스트 입니다. ex) [\"아토피 피부\", \"여드름 자국\"]
       type: string

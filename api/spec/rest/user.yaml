@@ -1,31 +1,31 @@
 me:
-#  put:
-#    security:
-#      - Authorization: []
-#    description: key, value 로 유저정보를 수정합니다. 핸드폰 번호등의 중요 정보는 해당 API 로 수정할 수 없습니다.
-#    operationId: api.rest.user.put_user_profile
-#    requestBody:
-#      required: true
-#      content:
-#        application/json:
-#          schema:
-#            type: object
-#            properties:
-#              property1:
-#                type: string
-#                example: 원하는 값
-#              property2:
-#                example: 원하는 값
-#    responses:
-#      "200":
-#        description: Success
-#        content:
-#          application/json:
-#            schema:
-#              type: object
-#              properties:
-#                user:
-#                  $ref: '../models/user.yaml#/user'
+  put:
+    security:
+      - Authorization: []
+    description: key, value 로 유저정보를 수정합니다. 핸드폰 번호등의 중요 정보는 해당 API 로 수정할 수 없습니다.
+    operationId: api.rest.user.put_user_profile
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              property1:
+                type: string
+                example: 원하는 값
+              property2:
+                example: 원하는 값
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user:
+                  $ref: '../models/user.yaml#/user'
 
   get:
     security:
