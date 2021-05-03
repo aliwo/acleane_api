@@ -23,6 +23,12 @@ class DateTimeHelper:
         return dt.strftime("%Y-%m-%d %H:%M:%S")
 
     @classmethod
+    def full_date(cls, dt):
+        if dt is None:
+            return None
+        return dt.strftime("%Y-%m-%d")
+
+    @classmethod
     def now_strf(cls):
         datetime.now().strftime("%Y%m%d_%H%M%S")
 
