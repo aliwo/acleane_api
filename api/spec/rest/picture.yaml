@@ -108,8 +108,7 @@ picture_by_date:
         name: date
         required: true
         schema:
-          type: integer
-          minimum: 1
+          type: string
 
     responses:
       "200":

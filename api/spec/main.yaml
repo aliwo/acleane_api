@@ -16,8 +16,6 @@ paths:
   # Image
   /image:
     $ref: 'rest/picture.yaml#/picture'
-  /image/{picture_id}:
-    $ref: 'rest/picture.yaml#/picture_by_id'
   /image/{date}:
     $ref: 'rest/picture.yaml#/picture_by_date'
 
