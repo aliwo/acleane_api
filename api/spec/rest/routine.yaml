@@ -76,3 +76,77 @@ user_routine:
                 okay:
                   type: boolean
                   example: true
+
+user_routine_by_id:
+  put:
+    security:
+      - Authorization: []
+    description: user routine 수정
+    operationId: api.rest.routine.put_user_routine
+    parameters:
+      - in: path
+        name: user_routine_id
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              routine_id:
+                type: integer
+                example: 1
+              amount:
+                type: string
+                example: 1 방울
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 1
+                user_id:
+                  type: integer
+                  example: 1
+                routine_id:
+                  type: integer
+                  example: 1
+                amount:
+                  type: string
+                  example: 1 방울
+                routine_name:
+                  type: string
+                  example: AHA
+
+  delete:
+    security:
+      - Authorization: []
+    description: user routine 삭제
+    operationId: api.rest.routine.delete_user_routine
+    parameters:
+      - in: path
+        name: user_routine_id
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                okay:
+                  type: boolean
+                  example: true

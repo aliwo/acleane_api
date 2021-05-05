@@ -38,6 +38,8 @@ paths:
     $ref: 'rest/routine.yaml#/routine'
   /routines/user:
     $ref: 'rest/routine.yaml#/user_routine'
+  /routines/user/{user_routine_id}:
+    $ref: 'rest/routine.yaml#/user_routine_by_id'
 
   # Journals
   /journals:
