@@ -42,6 +42,8 @@ paths:
   # Journals
   /journals:
     $ref: 'rest/journal.yaml#/journal'
+  /journals/{journal_id}:
+    $ref: 'rest/journal.yaml#/journal_by_id'
 
 
 components:

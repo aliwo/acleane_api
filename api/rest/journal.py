@@ -2,6 +2,7 @@ from datetime import datetime
 
 from flask import g, request
 from sqlalchemy import extract
+from sqlalchemy.orm.exc import NoResultFound
 
 from api.models.journal import Journal
 from api.models.user import User
@@ -49,6 +50,13 @@ def create_journal():
     return {'okay': True}, Status.HTTP_200_OK
 
 
+@route
+def delete_journal(journal_id):
+    try:
+        journal = Session().query(Journal).filter_by(id=journal_id, user_id=g.user_session.user.id).one()
+    except NoResultFound:
+        raise ClientError(f'no journal found #{journal_id}')
 
-
-
+    Session().delete(journal)
+    Session().commit()
+    return {'okay': True}, Status.HTTP_200_OK

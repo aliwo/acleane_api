@@ -59,3 +59,27 @@ journal:
                   type: boolean
                   example: true
 
+journal_by_id:
+  delete:
+    security:
+      - Authorization: []
+    description: journal 하나 삭제
+    operationId: api.rest.journal.delete_journal
+    parameters:
+      - in: path
+        name: journal_id
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+    responses:
+      "200":
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                okay:
+                  type: boolean
+                  example: true
