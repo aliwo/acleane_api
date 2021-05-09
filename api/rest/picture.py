@@ -37,14 +37,10 @@ def get_picture_by_id(picture_id):
 
 
 @route
-def get_picture_by_date(date):
+def get_pictures_by_date(date):
     date = datetime.strptime(date, '%Y-%m-%d')
-    picture = Session().query(Picture).filter_by(date=date).first()
-    if not picture:
-        return {}, Status.HTTP_200_OK
-    if picture.user_id != g.user_session.user.id:
-        raise ClientError('not your picture')
-    return picture.json() if picture else {}, Status.HTTP_200_OK
+    pictures = Session().query(Picture).filter_by(date=date, user_id=g.user_session.user.id).all()
+    return [p.json() for p in pictures], Status.HTTP_200_OK
 
 
 @route

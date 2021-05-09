@@ -101,8 +101,8 @@ picture_by_date:
   get:
     security:
       - Authorization: []
-    description: date 로 사진을 조회합니다. YYYY-MM-DD 형식
-    operationId: api.rest.picture.get_picture_by_date
+    description: date 로 사진의 목록을 조회합니다. YYYY-M록M-DD 형식
+    operationId: api.rest.picture.get_pictures_by_date
     parameters:
       - in: path
         name: date
