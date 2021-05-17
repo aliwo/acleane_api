@@ -42,7 +42,6 @@ def create_journal():
     afr(
         Journal(user_id=g.user_session.user.id,
                 routine_id=request.json.get('routine_id'),
-                picture_id=request.json.get('picture_id'),
                 date=date
         )
     )
