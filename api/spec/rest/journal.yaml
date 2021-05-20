@@ -56,8 +56,8 @@ journal:
                   type: boolean
                   example: true
 
-journal_by_id:
-  delete:
+delete_journal:
+  post:
     security:
       - Authorization: []
     description: journal 하나 삭제
