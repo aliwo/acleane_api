@@ -23,10 +23,11 @@ def get_all_user_routines():
 
 @route
 def post_user_routines():
+    for routine in Session().query(UserRoutine).filter_by(user_id=g.user_session.user.id).all():
+        Session().delete(routine)
+    Session().commit()
     for routine_id, amount in zip(request.json.get('routine_ids', []), request.json.get('amounts', [])):
-        user_routine = Session().query(UserRoutine).filter_by(user_id=g.user_session.user.id, routine_id=routine_id).first()
-        if not user_routine:
-            user_routine = afr(UserRoutine(user_id=g.user_session.user.id, routine_id=routine_id))
+        user_routine = afr(UserRoutine(user_id=g.user_session.user.id, routine_id=routine_id))
         user_routine.amount = amount
         user_routine.name = user_routine.routine.name
     Session().commit()
