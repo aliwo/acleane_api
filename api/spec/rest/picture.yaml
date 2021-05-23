@@ -72,10 +72,9 @@ picture_by_id:
                   type: string
                   example: https://storage.googleapis.com/soyeonlab/dog-2020-05-14-201910.png
   delete:
-
     security:
       - Authorization: []
-    description: id 로 사진을 조회합니다.
+    description: id 로 사진을 삭제합니다.
     operationId: api.rest.picture.delete_picture_by_id
     parameters:
       - in: path
